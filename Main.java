@@ -2,6 +2,8 @@ package lesson2;
 
 import java.util.*;
 
+import static java.lang.Math.random;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -88,12 +90,44 @@ public class Main {
         myArrayList.add("xxx");
         myArrayList.add("YYYyy");
 
-        System.out.println(myArrayList);
+       // System.out.println(myArrayList);
 //        myArrayList.bubbleSort(Comparator.naturalOrder());
         myArrayList.bubbleSort(Comparator.comparingInt(String::length));
 //        myArrayList.bubbleSort(Comparator.comparingInt(String::length).reversed());
 //        myArrayList.bubbleSort(Comparator.comparingInt(String::length).thenComparing(String::compareToIgnoreCase));
-        System.out.println(myArrayList);
-    }
+       // System.out.println(myArrayList);
 
+////////////HOMEWORK
+
+        MyArrayList<Integer> bigArr1 = new MyArrayList<>(100000);
+        for (int i = 0; i < 100000; i++) {
+            bigArr1.add((int)(random()*100000));
+        }
+
+        long start1 = System.currentTimeMillis();
+        bigArr1.selectionSort();
+        long end1 = System.currentTimeMillis();
+        System.out.println("selectionSort time: " + (end1-start1) + "ms");
+
+        MyArrayList<Integer> bigArr2 = new MyArrayList<>(100000);
+        for (int i = 0; i < 100000; i++) {
+            bigArr2.add((int)(random()*100000));
+        }
+
+        long start2 = System.currentTimeMillis();
+        bigArr2.insertionSort();
+        long end2 = System.currentTimeMillis();
+        System.out.println("insertionSort time: " + (end2-start2) + "ms");
+
+        MyArrayList<Integer> bigArr3 = new MyArrayList<>(100000);
+        for (int i = 0; i < 100000; i++) {
+            bigArr3.add((int)(random()*100000));
+        }
+
+        long start3 = System.currentTimeMillis();
+        bigArr3.bubbleSort();
+        long end3 = System.currentTimeMillis();
+        System.out.println("bubbleSort time: " + (end3-start3) + "ms");
+
+    }
 }

@@ -1,66 +1,46 @@
-import java.io.*;
-import java.util.*;
+package lesson3;
 
-public class Main{
-    public static void main(String[] args){
-        //0001
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
+public class Main {
+    public static void main(String[] args) {
+//        MyStack<Integer> stack = new MyStack<>();
+//        stack.push(1);
+//        stack.push(2);
+//        stack.push(3);
+//        stack.push(4);
+//        stack.push(5);
+//
+//        for (int i = 0; i <5 ; i++) {
+//            System.out.println(stack.pop());
+//        }
 
-        int a = in.nextInt();
-        int b = in.nextInt();
-        out.println(a + b);
+//        Expression e = new Expression("(4-6)+[{67+45} * {a / b}]");
+//        System.out.println(e.checkBracket());
 
-        out.flush();
 
-        //0025
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
-        int a = in.nextInt();
-        int b = in.nextInt();
-        if (a>b) {
-            System.out.println(">");
+//        MyQueue<Integer> queue = new MyQueue<>();
+//        queue.insert(1);
+//        queue.insert(2);
+//        queue.insert(3);
+//
+//        System.out.println(queue);
+//
+//        for (int i = 0; i < 3 ; i++) {
+//            System.out.println(queue.remove());
+//        }
+
+
+        MyPriorityQueue<Integer> mpq = new MyPriorityQueue<>();
+
+        mpq.insert(5);
+        mpq.insert(1);
+        mpq.insert(7);
+        mpq.insert(4);
+        mpq.insert(2);
+
+        System.out.println(mpq);
+        for (int i = 0; i < 5 ; i++) {
+            System.out.println(mpq.remove());
         }
-        if (a<b) {
-            System.out.println("<");
-        }
-        if (a==b) {
-            System.out.println("=");
-        }
-
-        out.flush();
-
-        //0195
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
-        int n = in.nextInt();
-        int a = in.nextInt();
-        int b = in.nextInt();
-        out.println(a * b * n * 2);
-
-        out.flush();
-
-        //0773
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
-        int k = in.nextInt();
-        int m = in.nextInt();
-
-        System.out.println(k*m*k);
-
-        out.flush();
-
-        //0021
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
-        int a = in.nextInt();
-        int b = in.nextInt();
-        int c = in.nextInt();
-        int[] arr = new int[]{a,b,c};
-        Arrays.sort(arr);
-        System.out.println(arr[2] - arr[0]);
-
-        out.flush();
 
     }
 }

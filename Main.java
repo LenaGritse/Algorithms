@@ -29,7 +29,7 @@ public class Main {
 //        }
 
 
-        MyPriorityQueue<Integer> mpq = new MyPriorityQueue<>();
+       /* MyPriorityQueue<Integer> mpq = new MyPriorityQueue<>();
 
         mpq.insert(5);
         mpq.insert(1);
@@ -41,6 +41,34 @@ public class Main {
         for (int i = 0; i < 5 ; i++) {
             System.out.println(mpq.remove());
         }
+*/
+        reverseSB("икортс еымидовв теавичаровереп яароток ,аммаргорП");
+
+        Deque deq = new Deque(10);
+        deq.insertRight(5);
+        deq.insertLeft(1);
+        deq.insertRight(7);
+        deq.insertLeft(4);
+        deq.insertRight(5);
+        deq.insertLeft(1);
+        deq.insertRight(7);
+        deq.insertLeft(4);
+
+        System.out.println(deq);
+
+        for (int i = 0; i < 3 ; i++) {
+            System.out.println(deq.removeRight());
+        }
+
+        System.out.println("Begin: " + deq.peekBegin() + ", End: " + deq.peekEnd());
+        System.out.println();
 
     }
+
+        public static void reverseSB(String s) {
+            StringBuilder sb = new StringBuilder(s);
+            sb.reverse();
+            System.out.println(sb.toString());
+        }
+
 }

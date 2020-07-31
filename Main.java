@@ -1,66 +1,38 @@
-import java.io.*;
-import java.util.*;
+package lesson4;
 
-public class Main{
-    public static void main(String[] args){
-        //0001
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
+import java.util.ListIterator;
 
-        int a = in.nextInt();
-        int b = in.nextInt();
-        out.println(a + b);
+public class Main {
+    public static void main(String[] args) {
+        MyLinkedList<String> mll = new MyLinkedList<>();
 
-        out.flush();
+        mll.insertFirst("Katia");
+        mll.insertFirst("Petia");
+        mll.insertFirst("Maria");
 
-        //0025
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
-        int a = in.nextInt();
-        int b = in.nextInt();
-        if (a>b) {
-            System.out.println(">");
+        System.out.println(mll);
+
+        mll.insertLast("Bob");
+        System.out.println(mll);
+
+
+
+//        System.out.println(mll.deleteFirst());
+//        System.out.println(mll);
+//
+//        System.out.println(mll.getFirst());
+
+//        mll.insert(1, "Sasha");
+//        System.out.println(mll);
+//
+        System.out.println(mll.delete("Bob"));
+        System.out.println(mll);
+
+
+        for (String s : mll) {
+            System.out.println(s);
         }
-        if (a<b) {
-            System.out.println("<");
-        }
-        if (a==b) {
-            System.out.println("=");
-        }
 
-        out.flush();
-
-        //0195
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
-        int n = in.nextInt();
-        int a = in.nextInt();
-        int b = in.nextInt();
-        out.println(a * b * n * 2);
-
-        out.flush();
-
-        //0773
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
-        int k = in.nextInt();
-        int m = in.nextInt();
-
-        System.out.println(k*m*k);
-
-        out.flush();
-
-        //0021
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
-        int a = in.nextInt();
-        int b = in.nextInt();
-        int c = in.nextInt();
-        int[] arr = new int[]{a,b,c};
-        Arrays.sort(arr);
-        System.out.println(arr[2] - arr[0]);
-
-        out.flush();
 
     }
 }

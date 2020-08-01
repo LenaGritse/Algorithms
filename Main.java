@@ -4,15 +4,16 @@ import java.util.ListIterator;
 
 public class Main {
     public static void main(String[] args) {
-        MyLinkedList<String> mll = new MyLinkedList<>();
+        MyLinkedQueue<String> mll = new MyLinkedQueue<>();
 
-        mll.insertFirst("Katia");
-        mll.insertFirst("Petia");
-        mll.insertFirst("Maria");
+        mll.enqueue("Katia");
+        mll.enqueue("Petia");
+        mll.enqueue("Maria");
 
         System.out.println(mll);
 
-        mll.insertLast("Bob");
+        mll.dequeue();
+
         System.out.println(mll);
 
 
@@ -25,13 +26,13 @@ public class Main {
 //        mll.insert(1, "Sasha");
 //        System.out.println(mll);
 //
-        System.out.println(mll.delete("Bob"));
-        System.out.println(mll);
+       // System.out.println(mll.delete("Bob"));
+       // System.out.println(mll);
 
 
-        for (String s : mll) {
-            System.out.println(s);
-        }
+        //for (String s : mll) {
+        //    System.out.println(s);
+        //}
 
 
     }

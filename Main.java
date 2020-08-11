@@ -1,66 +1,26 @@
-import java.io.*;
-import java.util.*;
+package lesson7.W7;
 
-public class Main{
-    public static void main(String[] args){
-        //0001
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
+public class Main {
+    public static void main(String[] args) {
+        Graph graph = new Graph(10);
 
-        int a = in.nextInt();
-        int b = in.nextInt();
-        out.println(a + b);
+        graph.addEdge(1,2);
+        graph.addEdge(0,4);
+        graph.addEdge(1,4);
+        graph.addEdge(3,4);
+        graph.addEdge(2,4);
+        graph.addEdge(5,2);
+        graph.addEdge(6,4);
+        graph.addEdge(9,1);
+        graph.addEdge(7,0);
+        graph.addEdge(8,5);
+        graph.addEdge(8,6);
+        graph.addEdge(9,7);
 
-        out.flush();
-
-        //0025
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
-        int a = in.nextInt();
-        int b = in.nextInt();
-        if (a>b) {
-            System.out.println(">");
-        }
-        if (a<b) {
-            System.out.println("<");
-        }
-        if (a==b) {
-            System.out.println("=");
-        }
-
-        out.flush();
-
-        //0195
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
-        int n = in.nextInt();
-        int a = in.nextInt();
-        int b = in.nextInt();
-        out.println(a * b * n * 2);
-
-        out.flush();
-
-        //0773
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
-        int k = in.nextInt();
-        int m = in.nextInt();
-
-        System.out.println(k*m*k);
-
-        out.flush();
-
-        //0021
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
-        int a = in.nextInt();
-        int b = in.nextInt();
-        int c = in.nextInt();
-        int[] arr = new int[]{a,b,c};
-        Arrays.sort(arr);
-        System.out.println(arr[2] - arr[0]);
-
-        out.flush();
+        BreadthFirstPath bfp = new BreadthFirstPath(graph, 3);
+        System.out.println(bfp.hasPathTo(8));
+        System.out.println(bfp.pathTo(8));
+        System.out.println(bfp.pathTo(8).size());
 
     }
 }

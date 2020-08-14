@@ -1,66 +1,34 @@
-import java.io.*;
-import java.util.*;
+package lesson8;
 
-public class Main{
-    public static void main(String[] args){
-        //0001
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
+import java.util.HashMap;
+import java.util.Random;
 
-        int a = in.nextInt();
-        int b = in.nextInt();
-        out.println(a + b);
+public class Main {
+    public static void main(String[] args) {
+//        int x = Integer.MIN_VALUE;
+//        System.out.println(x);
+//
+//        System.out.println(Math.abs(x));
+//
+//        System.out.println(Integer.toBinaryString(x));
+//        System.out.println("0"+Integer.toBinaryString(0x7fffffff));
 
-        out.flush();
 
-        //0025
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
-        int a = in.nextInt();
-        int b = in.nextInt();
-        if (a>b) {
-            System.out.println(">");
+        ChainingHashMap<Integer, String> chm = new ChainingHashMap<>();
+//        chm.put(1,"one");
+//        chm.put(2,"two");
+//        chm.put(3,"three");
+//        chm.put(4,"four");
+//        chm.put(5,"five");
+//
+//        System.out.println(chm.get(3));
+
+        Random random = new Random();
+
+        for (int i = 0; i < 6; i++) {
+            chm.put(random.nextInt(100),"");
         }
-        if (a<b) {
-            System.out.println("<");
-        }
-        if (a==b) {
-            System.out.println("=");
-        }
 
-        out.flush();
-
-        //0195
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
-        int n = in.nextInt();
-        int a = in.nextInt();
-        int b = in.nextInt();
-        out.println(a * b * n * 2);
-
-        out.flush();
-
-        //0773
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
-        int k = in.nextInt();
-        int m = in.nextInt();
-
-        System.out.println(k*m*k);
-
-        out.flush();
-
-        //0021
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
-        int a = in.nextInt();
-        int b = in.nextInt();
-        int c = in.nextInt();
-        int[] arr = new int[]{a,b,c};
-        Arrays.sort(arr);
-        System.out.println(arr[2] - arr[0]);
-
-        out.flush();
-
+        System.out.println(chm);
     }
 }
